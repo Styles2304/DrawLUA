@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>TEMPLATE</title>
+
+        <link rel="stylesheet" href="src/css/style.css">
+    </head>
+
+    <body>
+        <div id="masterContainer">
+            <div id="toolBox">
+                <div class="tool left top" type="r" id="tool_r"></div>
+                <div class="tool left top" type="rF" id="tool_rF"></div>
+                <div class="clear"></div>
+                <div class="tool left" type="c" id="tool_c"></div>
+                <div class="tool left" type="cF" id="tool_cF"></div>
+                <div class="clear"></div>
+                <div class="tool left top" type="t" id="tool_t"></div>
+                <div class="tool left top" type="tF" id="tool_tF"></div>
+                <div class="clear"></div>
+                <div class="tool left top" type="l" id="tool_l"></div>
+                <input type="color" id="colorSelect" name="color" class="left">
+                <div class="clear"></div>
+                <input type="range" id="opacitySelect" name="opacity" class="left" min="0" max="255" value="255" step="1">
+            </div>
+
+            <div id="gameContainer">
+                <canvas id="gameCanvas">Please upgrade your browser to support HTML5.</canvas>
+            </div>
+
+            <div id="historyContainer">
+                <div class="entry">
+                    <div class="entryColor"></div>
+                    Rectangle
+                    <div class="delete"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script type="text/javascript" src="src/js/jquery.min.js"></script>
+    <script type="text/javascript" src="src/js/gameEngine.js"></script>
+    <script type="text/javascript" src="src/js/game.js"></script>
+
+    <script type="text/javascript">
+        function opacitySlider(e) {
+            console.log(e.pageX + ", " + e.pageY);
+        }
+
+        $( document ).ready(function() {
+            // Resize master container
+            $("#masterContainer").css("width", function() {
+                return $("#toolBox").width() + $("#gameContainer").width() + $("#historyContainer").width() + 24;
+            });
+
+            // Selecting Tools
+            $(".tool").click(function() {
+                $(".tool").each(function() {
+                    $(this).removeClass("clicked");
+                });
+                $(this).addClass("clicked");
+            });
+
+            // Color Select
+            $("#colorSelect").change(function() {
+                _val=$(this).val().match(/[A-Za-z0-9]{2}/g);
+                _val = _val.map(function(v) { return parseInt(v, 16) });
+                console.log("rgb(" + _val.join(",") + "," + $('#opacitySelect').val() + ")");
+                // console.log(_val);
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,100 @@
+div { position: relative; }
+div#masterContainer { margin-left: auto; margin-right: auto; }
+div#gameContainer { float: left; margin-left: 10px;}
+div#toolBox {
+    float: left;
+    width: 68px;
+    height: 140px;
+    padding-top: 2px;
+    background-color: #535353;
+    box-sizing: border-box;
+    border: 1px solid #2e2e2e;
+}
+div#historyContainer {
+    float: left;
+    margin-left: 10px;
+    width: 200px;
+    height: 300px;
+    background-color: #535353;
+    box-sizing: border-box;
+    border: 1px solid #2e2e2e;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+div#tool_r { background-image: url('../img/rectangle.png'); }
+div#tool_rF { background-image: url('../img/rectangleF.png'); }
+div#tool_c { background-image: url('../img/circle.png'); }
+div#tool_cF { background-image: url('../img/circleF.png'); }
+div#tool_t { background-image: url('../img/triangle.png'); }
+div#tool_tF { background-image: url('../img/triangleF.png'); }
+div#tool_l { background-image: url('../img/line.png'); }
+input#colorSelect {
+    float: left;
+    margin-top: 6px;
+    width: 30px;
+    height: 15px;
+    background-color: #535353;
+    border: none;
+}
+input#opacitySelect {
+    width: 60px;
+}
+div.entry {
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 175px;
+    height: 20px;
+    padding-left: 2px;
+    line-height: 16px;
+    color: #d4d4d4;
+    background-color: #3c3c3c;
+    box-sizing: border-box;
+    border: 1px solid #2e2e2e;
+}
+
+div.entryColor {
+    float: left;
+    margin-top: 2px;
+    margin-right: 5px;
+    width: 11px;
+    height: 11px;
+    background-color: #0F0;
+    border: 1px solid #2e2e2e;
+}
+
+div.delete {
+    float: right;
+    margin-top: 2px;
+    margin-right: 5px;
+    width: 12px;
+    height: 12px;
+    background-image: url("../img/delete.png");
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-position: center;
+}
+div.delete:hover {
+    cursor: pointer;
+}
+
+.tool {
+    float: left;
+    width: 30px;
+    height: 25px;
+    box-sizing: border-box;
+    background-color: #535353;
+    border-radius: 4px;
+}
+
+.tool:hover {
+    border: 1px solid #2e2e2e;
+}
+
+.clicked {
+    background-color: #3c3c3c;
+    border: 1px solid #2e2e2e;
+}
+
+.clear { clear: both; }
+.top { margin-top: 2px; }
+.left { margin-left: 2px; }
